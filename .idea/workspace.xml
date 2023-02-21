@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="326ef572-338c-49c7-89c0-caf375ce0d67" name="Changes" comment="Первая задача">
+    <list default="true" id="326ef572-338c-49c7-89c0-caf375ce0d67" name="Changes" comment="add math action">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1.java" afterDir="false" />
     </list>
@@ -29,17 +29,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="task1" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="task1" />
       <module name="SE_lab" />
-      <option name="PROGRAM_PARAMETERS" value="Ivan" />
+      <option name="PROGRAM_PARAMETERS" value="Ivan 1 5 7 9 2 9 Artur 2 4 7 11 5 Arseniy 3 4 2 1 5 Phillip 4 2 7 Dima 5 5 9 7 6 3 Maksim 6 5 Sergey 7 9" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -61,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676965708516</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add math action">
+      <created>1676966960162</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676966960162</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -77,6 +84,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Первая задача" />
-    <option name="LAST_COMMIT_MESSAGE" value="Первая задача" />
+    <MESSAGE value="add math action" />
+    <option name="LAST_COMMIT_MESSAGE" value="add math action" />
   </component>
 </project>
