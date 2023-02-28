@@ -1,71 +1,69 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-
+import java.util.Scanner;
 public class Server {
+    static Socket clientSocket;
+    static BufferedReader in;
+    static BufferedWriter out;
+    static String username;
 
-    private static Socket clientSocket; //сокет для общения
-    private static ServerSocket server; // серверсокет
-    private static BufferedReader in; // поток чтения из сокета
-    private static BufferedWriter out; // поток записи в сокет
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int j = 0;
+        String word;
         try{
-            server = new ServerSocket(4004, 2);
-            System.out.println("Сервер запущен!");
-            for (int i = 0; i < 2; i++){
-                clientSocket = server.accept();
-                in = new  BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            ServerSocket serverSocket = new ServerSocket(4004);
+            System.out.println("Запустили сервер");
+            while(true){
+                j = 1;
+                clientSocket = serverSocket.accept();
+                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-                String word = in.readLine();
-                System.out.println("К нам пришёл " + word);
-                out.write("Привет, " + word + "\n");
+
+                username = in.readLine();
+                System.out.println("К нам пришел " + username);
+                out.write("Привет, " + username + "\n");
                 out.flush();
+
+                word = in.readLine();
+                if(word.equals("bye")){
+                    System.out.println("Пока " + username);
+                    in.close();
+                    out.flush();
+                    out.close();
+                    clientSocket.close();
+                }
+                else{
+                    while(!word.equals("bye")){
+                        if((word.equals("exit")) && (username.equals("admin"))){
+                            out.flush();
+                            in.close();
+                            out.close();
+                            System.out.println("Пока " + username);
+                            clientSocket.close();
+                            System.out.println("Сервер закрыт");
+                            serverSocket.close();
+                            System.exit(0);
+                        }
+                        else{
+                            System.out.println("Получено сообщение: " + word);
+                            out.write(j + " " + word + "\n");
+                            out.flush();
+                            j++;
+                            word = in.readLine();
+                        }
+                    }
+                    System.out.println("Пока " + username);
+                    in.close();
+                    out.flush();
+                    out.close();
+                    clientSocket.close();
+
+                }
             }
-
-            clientSocket.close();
-            in.close();
-            out.close();
-            System.out.println("Сервер закрыт");
-            server.close();
-
-        } catch (IOException e) {
+        } catch (IOException e){
             System.err.println(e);
         }
-
-//        try {
-//            try {
-//                server = new ServerSocket(4004); // серверсокет прослушивает порт 4004
-//                System.out.println("Сервер запущен!"); // хорошо бы серверу
-//                //   объявить о своем запуске
-//                clientSocket = server.accept(); // accept() будет ждать пока
-//                //кто-нибудь не захочет подключиться
-//                try { // установив связь и воссоздав сокет для общения с клиентом можно перейти
-//                    // к созданию потоков ввода/вывода.
-//                    // теперь мы можем принимать сообщения
-//                    in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-//                    // и отправлять
-//                    out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-//
-//                    String word = in.readLine(); // ждём пока клиент что-нибудь нам напишет
-//                    System.out.println(word);
-//                    // не долго думая отвечает клиенту
-//                    out.write("Приятно познакомиться, " + word + "\n");
-//                    out.flush(); // выталкиваем все из буфера
-//
-//                } finally { // в любом случае сокет будет закрыт
-//                    clientSocket.close();
-//                    // потоки тоже хорошо бы закрыть
-//                    in.close();
-//                    out.close();
-//                }
-//            } finally {
-//                System.out.println("Сервер закрыт!");
-//                server.close();
-//            }
-//        } catch (IOException e) {
-//            System.err.println(e);
-//        }
     }
 }
