@@ -2,17 +2,13 @@ import java.io.*;
 import java.net.Socket;
 
 public class Client {
-    private static Socket clientSocket;
-    private static BufferedReader reader;
-    private static BufferedReader in;
-    private static BufferedWriter out;
 
     public static void main(String[] args) {
         try {
-            clientSocket = new Socket("localhost", 4004);
-            reader = new BufferedReader(new InputStreamReader(System.in));
-            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+            Socket clientSocket = new Socket("localhost", 4004);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
             System.out.println("Как вас зовут? :");
             String username = reader.readLine();
@@ -20,9 +16,8 @@ public class Client {
             out.flush();
             String serverWord = in.readLine();
             System.out.println(serverWord);
-            boolean x = true;
             String word;
-            while(x){
+            while(true){
                 System.out.println("Введите слово: ");
                 word = reader.readLine();
                 if((username.equals("admin")) && (word.equals("exit"))){
@@ -38,7 +33,7 @@ public class Client {
                     out.write("bye\n");
                     out.flush();
                     System.out.println("Клиент был закрыт...");
-                    x = false;
+                    break;
                 }
                 else{
                     out.write(word + "\n");

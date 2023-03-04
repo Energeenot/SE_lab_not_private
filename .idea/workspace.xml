@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="326ef572-338c-49c7-89c0-caf375ce0d67" name="Changes" comment="hello_chat1">
+    <list default="true" id="326ef572-338c-49c7-89c0-caf375ce0d67" name="Changes" comment="math_chat1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="math_chat" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +43,7 @@
   }
 }</component>
   <component name="RunManager" selected="Application.Client">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="SE_lab" />
       <method v="2">
@@ -57,6 +57,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="SE_lab" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="SE_lab" />
@@ -64,19 +71,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="task1" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="task1" />
+    <configuration name="Server" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="SE_lab" />
       <option name="PROGRAM_PARAMETERS" value="Ivan 1 5 7 9 2 9 Artur 2 4 7 11 5 Arseniy 3 4 2 1 5 Phillip 4 2 7 Dima 5 5 9 7 6 3 Maksim 6 5 Sergey 7 9" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Server (1)" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Client2" />
+      <item itemvalue="Application.Server" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server (1)" />
         <item itemvalue="Application.Server" />
         <item itemvalue="Application.Client2" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
